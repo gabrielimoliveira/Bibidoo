@@ -1,0 +1,381 @@
+/*!
+ * Start Bootstrap - Business Casual Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+}
+
+body::before {
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: invert(0.3);
+  -moz-filter: invert(0.3);
+  -o-filter: invert(0.3);
+  -ms-filter:invert(0.3);
+  filter: invert(0.3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#topodois{
+    position: absolute;
+    top:-2%;
+    margin-left: 60%;
+}
+#topodois #buscar {
+  background: white;
+  width: 350px;
+  height: 37px;
+  position: relative;
+  top: 33px;
+  border-radius: 6px;
+  border: solid 5px white;
+  float: left;
+  left: 50px;
+  border-color: #D5BA75;
+}
+.botao {
+  margin-top: 5%;
+  line-height: 20px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #777;
+  cursor: pointer;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+  color:rgb(119, 119, 119);
+  word-wrap: break-word;
+}
+
+#mostra-login {
+  float: left;
+}
+
+#login {
+  position: absolute;
+  right: -120%;
+  top: 50px;
+  clear: both;
+  width:400px;
+  margin-top: 8px;
+  margin-bottom: 2%;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  z-index: 1;
+}
+
+.triangulo {
+  width: 0;
+  border-top: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #D5BA75;
+  border-left: 12px solid transparent;
+  margin: 0 auto;
+}
+
+#login h1,
+#cadastrar h1 {
+  background: #D5BA75;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+
+form {
+  background: #f0f0f0;
+  padding: 6% 4%;
+}
+
+input[type="email"],
+input[type="password"],input[type="text"]{
+  width: 92%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 95%;
+  color: #555;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background: #D5BA75;
+  border: 0;
+  padding: 4%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+input[type="submit"]:hover {
+  background: #D5BA75;
+}
+#formulario {
+  margin-left: 50%;
+}
+#esqueceu-senha {
+  padding-top: 15px;
+  text-align: right;
+}
+
+#esqueceu-senha a {
+  color: black;
+}
+
+#esqueceu-senha a:hover {
+  text-decoration: underline;
+}
+#topodois #div_busca {
+  margin: 0;
+  width: auto;
+  height: 37px;
+}
+
+#topodois #form-wrap {
+    padding: 2px;
+  width: 340px;
+  height: 37px;
+  vertical-align: middle;
+  overflow: hidden;
+  float: left;
+  clear: left;
+  border: solid 0px;
+}
+
+#topodois .form-text {
+  width: 290px;
+  height: 20px;
+  margin: auto;
+  padding: 0px;
+  color: #b1b1b1;
+  border: 0px;
+  float: left;
+  background: trasnparent;
+}
+#topodois #div_busca #bmenu{
+  margin: 0;
+  width: auto;
+  height: 37px;
+}
+
+#topodois #form-wrap {
+    padding: 2px;
+  width: 340px;
+  height: 37px;
+  vertical-align: middle;
+  overflow: hidden;
+  float: left;
+  clear: left;
+  border: solid 0px;
+}
+
+#topodois #bmenu .form-text  {
+  margin-right: 50%;
+  width: 290px;
+  height: 20px;
+  padding: 0px;
+  color: #b1b1b1;
+  border: 0px;
+  float: left;
+  background: trasnparent;
+}
+p {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: #000;
+}
+
+hr {
+    max-width: 400px;
+    border-color: #999999;
+}
+
+.brand,
+.address-bar {
+    display: none;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.img-full {
+    min-width: 100%;
+}
+
+.brand-before,
+.brand-name {
+    text-transform: capitalize;
+}
+
+.brand-before {
+    margin: 15px 0;
+}
+
+.brand-name {
+    margin: 0;
+    font-size: 4em;
+}
+
+.tagline-divider {
+    margin: 15px auto 3px;
+    max-width: 250px;
+    border-color: #999999;
+}
+
+.box {
+    width: 75%;
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+.sair{
+  text-decoration: none;
+  font-size: 20px;
+  margin-left:96%;
+  color:white;
+}
+.intro-text {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.img-border {
+    float: none;
+    margin: 0 auto 0;
+    border: #999999 solid 1px;
+}
+
+.img-left {
+    float: none;
+    margin: 0 auto 0;
+}
+
+footer {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+footer p {
+    margin: 0;
+    padding: 50px 0;
+}
+
+@media screen and (min-width:768px) {
+    .brand {
+        display: inherit;
+        margin: 0;
+        padding: 30px 0 10px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff;
+    }
+
+    .top-divider {
+        margin-top: 0;
+    }
+
+    .img-left {
+        float: left;
+        margin-right: 25px;
+    }
+
+    .address-bar {
+        display: inherit;
+        margin: 0;
+        padding: 0 0 40px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-transform: uppercase;
+        font-size: 1.25em;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #fff;
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 0;
+    }
+
+    .navbar-default {
+        border: none;
+        background: #fff;
+        background: rgba(255,255,255,0.9);
+    }
+
+    .nav>li>a {
+        padding: 35px;
+    }
+
+    .navbar-nav>li>a {
+        line-height: normal;
+    }
+
+    .navbar-nav {
+       
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .box:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
