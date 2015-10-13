@@ -73,12 +73,13 @@
                     <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
                     <!--<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
                 mapa-->
-                    <form method="post" action="" id="formulario">
+                    <form method="post" action="control/InserirUsuario" id="formulario">
                         <input type="text" title="Preencha o campo nome." required name="nome" id="nome" class="nome" placeholder="Nome Completo" />
                         <input type="text" title="Preencha o campo usuário" required name="usuario" id="usuario" placeholder="Usuário" >
                          <input type="email" title="Preencha o campo email." required name="email" id="email" placeholder="Email"/>
                          <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
-                        <input type="password" title="Preencha o campo confirmar senha." required name="senhaconfere" id="senhaconfere" placeholder="Confirmar Senha">
+                        <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
+                        <input type="date" title="Preencha o campo data nascimento." required name="datanascimento" id="datanascimento" placeholder="data nascimento">
                                 <input type="submit" value="Cadastrar" name="cadastro" id="botaocadastro" class="cad" />
                                 <div id="entre">
                                     <p>Ja possui cadastro?<a href="#entrar" class="link">Login</a></p>

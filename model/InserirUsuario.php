@@ -1,12 +1,12 @@
 <?php
 require 'class/Usuario.class.php';
 require 'conexao.php';
-					if(!empty($_POST['Enviar'])&&(!empty($_POST['nome'])) && (!empty($_POST['sobrenome'])) && (!empty($_POST['email'])) && (!empty($_POST['senha']))&& (!empty($_POST['nascimento']))){
+					if(!empty($_POST['Enviar'])&&(!empty($_POST['nome'])) && (!empty($_POST['usuario'])) && (!empty($_POST['email'])) && (!empty($_POST['senha']))&& (!empty($_POST['datanascimento']))){
 						$nome=$_POST['nome'];
-						$sobrenome=$_POST['sobrenome'];
+						$nomeusuario=$_POST['usuario'];
 						$email=$_POST['email'];
 						$senha=md5($_POST['senha']);
-						$nascimento=$_POST['nascimento'];
+						$nascimento=$_POST['datanascimento'];
             if(!empty($_FILES['foto'])){
               $foto=$_FILES['foto'];
             }

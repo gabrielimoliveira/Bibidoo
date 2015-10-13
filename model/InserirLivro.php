@@ -1,6 +1,6 @@
 <?php
 require './conexao.php';
-require 'class/Livro.class.php';
+require 'Livro.class.php';
 					if(!empty($_POST['Enviar'])&&(!empty($_POST['titulo'])) && (!empty($_POST['numpage']))  && (!empty($_POST['sinopse']))&& (!empty($_POST['categoria']))){
 						$titulo= $_POST['titulo'];
 						$numpage = $_POST['numpage'];
