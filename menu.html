@@ -1,14 +1,14 @@
 <li>
                         <a href="index.php">Inicio</a>
                     </li>
-                    <li> <div class="botao" id="mostra-login"><a href="#"><p>Entrar</p></a></div>
+                    <li><div class="botao" id="mostra-login"><p>Entrar</p><a></a></div>
                       <div id="login">
                         <div class="triangulo"></div>
-                        <form>
-                          <input type="email" placeholder="e-mail">
-                          <input type="password" placeholder="senha">
-                          <input type="submit" value="Entrar">
-                          <p id="esqueceu-senha"><a href="perfil.php">Esqueceu a senha?</a></p>
+                        <form action="verifica.php" method="post">
+                         <input type="text"name="login" placeholder="e-mail/nome de usuario">
+                          <input type="password" name="pswd" placeholder="senha">
+                          <input type="submit" name= "Entrar" value="Entrar">
+                          <p id="esqueceu-senha"><a href="#">Esqueceu a senha?</a></p>
                         </form>
                       </div>
                     </li>
