@@ -71,15 +71,18 @@ session_start();
  		 function mostraformulario(){
 
 		?>
-		<form name="incluir" action="InserirUsuario.php" method="POST" enctype="multipart/form-data">
-			Nome: <input type="text" name="nome" value=""/><br>
-			Sobrenome :<input type="text" name="sobrenome" value=""/><br>
-			Email: <input type="email" name="email" value=""/><br>
-			Senha: <input type="password" name="senha" value=""/><br>
-			Nascimento: <input type="date" name="nascimento" value=""/><br>
-			Foto:<input type="file" name="foto"/></br>
-			 <input type="submit" name="Enviar" value="Enviar"/><br>
-		</form>
+		 <form method="post" action="../InserirUsuario.php" id="formulario">
+                        <input type="text" title="Preencha o campo nome." required name="nome" id="nome" class="nome" placeholder="Nome Completo" />
+                        <input type="text" title="Preencha o campo usuário" required name="usuario" id="usuario" placeholder="Usuário" >
+                         <input type="email" title="Preencha o campo email." required name="email" id="email" placeholder="Email"/>
+                         <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
+                        <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
+                        <input type="date" title="Preencha o campo data nascimento." required name="datanascimento" id="datanascimento" placeholder="data nascimento">
+                                <input type="submit" value="Cadastrar" name="cadastro" id="botaocadastro" class="cad" />
+                                <div id="entre">
+                                    <p>Ja possui cadastro?<a href="#entrar" class="link">Login</a></p>
+                                </div>
+                        </form>
 		<?php
 	}
 	function GetUsuario($mysqli){

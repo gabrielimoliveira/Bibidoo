@@ -1,6 +1,6 @@
 <?php
 require 'class/Usuario.class.php';
-require 'conexao.php';
+require '../conexao.php';
 					if(!empty($_POST['Enviar'])&&(!empty($_POST['nome'])) && (!empty($_POST['usuario'])) && (!empty($_POST['email'])) && (!empty($_POST['senha']))&& (!empty($_POST['datanascimento']))){
 						$nome=$_POST['nome'];
 						$nomeusuario=$_POST['usuario'];
@@ -9,8 +9,10 @@ require 'conexao.php';
 						$nascimento=$_POST['datanascimento'];
             if(!empty($_FILES['foto'])){
               $foto=$_FILES['foto'];
+            }else{
+                $foto= "";
             }
-						if (!empty($foto["name"])) {
+		/*				if (!empty($foto["name"])) {
       $largura = 8000; // Largura máxima em pixels
       $altura = 8000; // Altura máxima em pixels
       $tamanho = 8150000; // Tamanho máximo do arquivo em bytes
@@ -51,7 +53,7 @@ require 'conexao.php';
     }   
   					}else{
 							$nome_imagem=null;
-						}
+						}*/
 						$usuario = new Usuario(null,$nome,$sobrenome,$email,$senha,$nascimento,$nome_imagem);
 						$usuario ->InserirUsuario($mysqli);
 					}

@@ -1,5 +1,5 @@
 <?php
-	$mysqli = new mysqli('localhost', 'root', '12345', 'projeto');
+	$mysqli = new mysqli('localhost', 'root', '', 'projeto');
     if ($mysqli->connect_error) {
         die('Erro na Conexão (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 	}
