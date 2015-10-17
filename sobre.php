@@ -16,7 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-
+    <script type="text/javascript" src="js/jquery-2.1.4.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/entrar.js" charset="utf-8"></script>
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">

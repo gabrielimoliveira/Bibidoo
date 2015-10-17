@@ -8,8 +8,8 @@ session_start();
  		private $foto;
  		private $amigos;
 
- 		function __construct($_id=null,$_nome=null,$_sobrenome=null,$_login=null,$_senha=null,$_nascimento=null,$_foto=null,$_foto=null){
- 			parent::__construct($_nome,$_sobrenome,$_nascimento);
+ 		function __construct($_id=null,$_nome=null,$_nomeusuario=null,$_login=null,$_senha=null,$_nascimento=null,$_foto=null){
+ 			parent::__construct($_nome,$_nomeusuario,$_nascimento);
  			$this->foto=$_foto;
  			$this->login=$_login;
  			$this->senha=$_senha;
@@ -45,10 +45,11 @@ session_start();
  			 $this->foto=$_foto;
  		}
  		function InserirUsuario($mysqli){
- 			$query= "insert into Usuario Values" . "(NULL,' $this->nome ',' $this->sobrenome',' $this->login ',' $this->senha ',' null ',' $this->foto',' $this->nascimento')";
-		$mysqli->query($query);
+ 			$query= "insert into Usuario Values" . "(NULL,' $this->nome ',' $this->login ',' $this->senha ',' null ',' $this->foto',' $this->nascimento','$this->nomeusuario')";
+                        $mysqli->query($query);
 		if($mysqli->affected_rows==1){
-			echo "usuario cadastrado com sucesso";
+			$b="usuario cadastrado com sucesso";
+                        return $b;
 		}else{
 			echo "Erro : $mysqli->error";
 		}
@@ -71,18 +72,15 @@ session_start();
  		 function mostraformulario(){
 
 		?>
-		 <form method="post" action="../InserirUsuario.php" id="formulario">
-                        <input type="text" title="Preencha o campo nome." required name="nome" id="nome" class="nome" placeholder="Nome Completo" />
-                        <input type="text" title="Preencha o campo usuário" required name="usuario" id="usuario" placeholder="Usuário" >
-                         <input type="email" title="Preencha o campo email." required name="email" id="email" placeholder="Email"/>
-                         <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
-                        <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
-                        <input type="date" title="Preencha o campo data nascimento." required name="datanascimento" id="datanascimento" placeholder="data nascimento">
-                                <input type="submit" value="Cadastrar" name="cadastro" id="botaocadastro" class="cad" />
-                                <div id="entre">
-                                    <p>Ja possui cadastro?<a href="#entrar" class="link">Login</a></p>
-                                </div>
-                        </form>
+		<form name="incluir" action="InserirUsuario.php" method="POST" enctype="multipart/form-data">
+			Nome: <input type="text" name="nome" value=""/><br>
+			Sobrenome :<input type="text" name="sobrenome" value=""/><br>
+			Email: <input type="email" name="email" value=""/><br>
+			Senha: <input type="password" name="senha" value=""/><br>
+			Nascimento: <input type="date" name="nascimento" value=""/><br>
+			Foto:<input type="file" name="foto"/></br>
+			 <input type="submit" name="Enviar" value="Enviar"/><br>
+		</form>
 		<?php
 	}
 	function GetUsuario($mysqli){
@@ -118,5 +116,14 @@ session_start();
 		}
 
 	}
+        public function VerificaUsuario($mysqli) {
+            $sql= "Select * from usuario where senha='$this->senha' and nome='$this->login' or login='$this->login'";
+            $resultado= $mysqli->query($sql);
+            if($mysqli->affected_rows>=1){
+                return true;
+            }else{
+                return false;
+            }
+        }
 }
 ?>

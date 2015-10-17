@@ -16,6 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-2.1.4.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/entrar.js" charset="utf-8"></script>
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -27,7 +30,26 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript">
+        $(function() {
+        $("#formulario").submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                type:"POST",
+                async: true,
+                url: "model/InserirUsuario.php",
+                data:$("#formulario").serialize(),
+                success: function(data) {
+                    $(":text, :email, :password, :date, :file").each(function () {
+                        $(this).val("");
+                    });
+                    $("#saida").html(data);
+                   
+                }
+            });
+	});
+    });
+    </script>
 </head>
 
 <body>
@@ -73,7 +95,19 @@
                     <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
                     <!--<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
                 mapa-->
-                    <?php  include ('model/InseriorUsuario.php');?>
+                    <form method="post" action="" id="formulario" enctype="multipart/form-data">
+                        <input type="text" title="Preencha o campo nome." required name="nome" id="nome" class="nome" placeholder="Nome Completo" />
+                        <input type="text" title="Preencha o campo usuário" required name="usuario" id="usuario" placeholder="Usuário" >
+                         <input type="email" title="Preencha o campo email." required name="email" id="email" placeholder="Email"/>
+                         <input type="password" title="Preencha o campo senha."required name="senha" id="senha" placeholder="Senha"/>
+                        Data de nascimento:<input type="date" title="Preencha o campo data nascimento." required name="datanascimento" id="datanascimento" placeholder="data nascimento"/><br>
+                        Foto:<input type="file" required name="foto" id="foto" placeholder="foto"/><br><br>
+                        <div id="saida"></div><br>
+                        <input type="submit" value="Cadastrar" name="cadastro" id="botaocadastro" class="cad" />
+                                <div id="entre">
+                                    <p>Ja possui cadastro?<a href="#entrar" class="link">Login</a></p>
+                                </div>
+                        </form>
                 </div>
                 <div class="col-md-4">
                     <p>

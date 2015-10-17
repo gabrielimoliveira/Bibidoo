@@ -10,7 +10,8 @@
     <meta name="author" content="">
 
     <title>Business Casual - Start Bootstrap Theme</title>
-
+     <script type="text/javascript" src="js/jquery-2.1.4.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js" charset="utf-8"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,14 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        $('#login').toggle();
-
-        $('#mostra-login').click(function() {
-        $('#login').toggle();
-        });
-    </script>
-
+    <script type="text/javascript" src="js/entrar.js" charset="utf-8"></script>
 </head>
 
 <body>

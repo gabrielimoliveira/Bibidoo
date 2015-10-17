@@ -68,7 +68,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="box">
+            <div class="box" id="feed">
                 <div class="col-lg-12 text-center">
                     <div id="carousel-example-generic" class="carousel slide">
                         <!-- Indicators -->

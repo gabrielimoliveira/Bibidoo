@@ -60,7 +60,7 @@ h6 {
   border-color: #D5BA75;
 }
 .botao {
-  margin-top: 5%;
+  margin-top: 20%;
   line-height: 20px;
   margin: 0 auto;
   padding: 10px;
@@ -76,6 +76,7 @@ h6 {
 
 #mostra-login {
   float: left;
+  margin-top: 23%;
 }
 
 #login {
@@ -262,13 +263,15 @@ hr {
     max-width: 250px;
     border-color: #999999;
 }
-
 .box {
-    width: 70%;
+    width: 100%;
     margin-bottom: 20px;
     padding: 30px 15px;
     background: #fff;
     background: rgba(255,255,255,0.9);
+}
+#feed{
+    width: 70%;
 }
 #perfil {
     margin-top: -55%;
