@@ -117,7 +117,7 @@ session_start();
 
 	}
         public function VerificaUsuario($mysqli) {
-            $sql= "Select * from usuario where senha='$this->senha' and nome='$this->login' or login='$this->login'";
+            $sql= "Select * from usuario where senha='$this->senha' and nomeusuario='$this->login' or email='$this->login'";
             $resultado= $mysqli->query($sql);
             if($mysqli->affected_rows>=1){
                 return true;

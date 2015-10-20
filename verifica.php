@@ -7,8 +7,7 @@ if(!empty($_POST['login']) && !empty($_POST['pswd'])){
         $usuario = new Usuario();
         $usuario->setLogin($login);
         $usuario->setSenha($senha);
-        $val=VerificaUsuario($msqli);
-        if($val){
+        if($usuario->VerificaUsuario($mysqli)){
             header('Location: entrar.php');
         }else{
             echo "Login ou senha incorretos";

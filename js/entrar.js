@@ -1,7 +1,8 @@
 $(function() {
-            $('#mostra-login').click(function(){
-                $('#login').toggle();
-            });
+    $('#login').toggle(display="false");
+    $('#mostra-login').click(function(){
+                  $('#login').toggle(display="true");
+            })
             $("#verifica").submit(function(b){
                 b.preventDefault();
                 $.ajax({
