@@ -4,7 +4,8 @@ require '../conexao.php';
 						$nome=$_POST['nome'];
 						$nomeusuario=$_POST['usuario'];
 						$email=$_POST['email'];
-						$senha=md5($_POST['senha']);
+                                                $val=$_POST['senha'];
+						$senha=md5($val);
 						$nascimento=$_POST['datanascimento'];
             if(!empty($_FILES['foto'])){
                 $foto=$_FILES['foto'];
@@ -56,5 +57,5 @@ require '../conexao.php';
             }
      					$usuario = new Usuario(null,$nome,$nomeusuario,$email,$senha,$nascimento,$nome_imagem);
 						$valor= $usuario ->InserirUsuario($mysqli);
-                                                echo $valor;
+                                               echo $valor;
 ?>

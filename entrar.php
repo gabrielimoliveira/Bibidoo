@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+?>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -28,11 +30,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript">
-        $('#login').toggle();
-
-        $('#mostra-login').click(function() {
-        $('#login').toggle();
-        });
     </script>
 
 </head>

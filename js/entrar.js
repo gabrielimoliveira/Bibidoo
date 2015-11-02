@@ -11,11 +11,11 @@ $(function() {
                     url: "verifica.php",
                     data:$("#verifica").serialize(),
                     success: function(data) {
-                        $(":text, :password").each(function () {
-                            $(this).val("");
-                        });
-                        $("#result").html(data);
-
+                        if(data==""){
+                            document.location.href = 'entrar.php';
+                        }else{
+                            $("#result").html(data);
+                        }
                     }
                 });
             });

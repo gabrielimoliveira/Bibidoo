@@ -45,7 +45,7 @@ session_start();
  			 $this->foto=$_foto;
  		}
  		function InserirUsuario($mysqli){
- 			$query= "insert into Usuario Values" . "(NULL,' $this->nome ',' $this->login ',' $this->senha ',' null ',' $this->foto',' $this->nascimento','$this->nomeusuario')";
+ 			$query= "insert into Usuario Values" . "(NULL,'$this->nome','$this->login','$this->senha','null','$this->foto','$this->nascimento','$this->nomeusuario')";
                         $mysqli->query($query);
 		if($mysqli->affected_rows==1){
 			$b="usuario cadastrado com sucesso";
@@ -119,6 +119,8 @@ session_start();
         public function VerificaUsuario($mysqli) {
             $sql= "Select * from usuario where senha='$this->senha' and nomeusuario='$this->login' or email='$this->login'";
             $resultado= $mysqli->query($sql);
+            $linha=$resultado->fetch_array();
+                 $_SESSION['usuario']=$linha['nomeusuario'];
             if($mysqli->affected_rows>=1){
                 return true;
             }else{
