@@ -8,6 +8,7 @@ if(!empty($_POST['login']) && !empty($_POST['pswd'])){
         $usuario->setLogin($login);
         $usuario->setSenha($senha);
         if($usuario->VerificaUsuario($mysqli)){
+            $_SESSION['usuario']=$usuario->getNomeUsuario();
         }else{
             echo "Login ou senha incorretos";
     }

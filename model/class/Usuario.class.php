@@ -1,6 +1,5 @@
 <?php
 require_once ('Pessoa.class.php');
-session_start();
  	class Usuario extends Pessoa{
  		private $id;
  		private $login;
@@ -45,7 +44,7 @@ session_start();
  			 $this->foto=$_foto;
  		}
  		function InserirUsuario($mysqli){
- 			$query= "insert into Usuario Values" . "(NULL,'$this->nome','$this->login','$this->senha','null','$this->foto','$this->nascimento','$this->nomeusuario')";
+ 			$query= "insert into Usuario Values" . "(NULL,'$this->nome','$this->login','$this->senha','2','$this->foto','$this->nascimento','$this->nomeusuario')";
                         $mysqli->query($query);
 		if($mysqli->affected_rows==1){
 			$b="usuario cadastrado com sucesso";
@@ -84,14 +83,13 @@ session_start();
 		<?php
 	}
 	function GetUsuario($mysqli){
-		$query="Select * from Usuario Where idUsuario=".$this->idUsuario;
+		$query="Select * from usuario Where nomeusuario like '$this->nomeusuario'";
 		$resultado=$mysqli->query($query);
 		$linha=$resultado->fetch_array();
 		$this->nome=$linha['nome'];
-		$this->login=$linha['login'];
+		$this->login=$linha['email'];
 		$this->senha=$linha['senha'];
 		$this->nascimento=$linha['nascimento'];
-		$this->sobrenome=$linha['sobrenome'];
 	}
 	function DeletarUsuario($mysqli){
 		$query = "delete from Usuario where idUsuario like '$this->id'";
@@ -120,7 +118,7 @@ session_start();
             $sql= "Select * from usuario where senha='$this->senha' and nomeusuario='$this->login' or email='$this->login'";
             $resultado= $mysqli->query($sql);
             $linha=$resultado->fetch_array();
-                 $_SESSION['usuario']=$linha['nomeusuario'];
+                 
             if($mysqli->affected_rows>=1){
                 return true;
             }else{
