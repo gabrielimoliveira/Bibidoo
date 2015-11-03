@@ -86,6 +86,13 @@ require_once ('Pessoa.class.php');
 		$query="Select * from usuario Where nomeusuario like '$this->nomeusuario'";
 		$resultado=$mysqli->query($query);
 		$linha=$resultado->fetch_array();
+                $this->id=$linha['idUsuario'];
+		$this->nome=$linha['nome'];
+	}
+        function MostraUsuario($mysqli){
+		$query="Select * from usuario Where nomeusuario like %'$this->nome'%";
+		$resultado=$mysqli->query($query);
+		$linha=$resultado->fetch_array();
 		$this->nome=$linha['nome'];
 		$this->login=$linha['email'];
 		$this->senha=$linha['senha'];

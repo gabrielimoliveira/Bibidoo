@@ -1,0 +1,28 @@
+#perfil2 {
+    margin-top: -31%;
+    width: 30%;
+    margin-left:75%;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+.bc input[type="submit"]{
+    width: 100px;
+    background: #D5BA75;
+    border: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .3s;
+    -webkit-transition: background .3s;
+}
+.bc input[type="email"], input[type="password"], input[type="text"] {
+    width: 60%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 2%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    color: #555;
+}

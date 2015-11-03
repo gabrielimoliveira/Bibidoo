@@ -4,7 +4,7 @@
                     <li><div class="botao" id="mostra-login"><p>Entrar</p><a></a></div>
                       <div id="login">
                         <div class="triangulo"></div>
-                        <form action="verifica.php" method="post">
+                        <form id="verfica" method="post">
                          <input type="text"name="login" placeholder="e-mail/nome de usuario">
                           <input type="password" name="pswd" placeholder="senha">
                           <input type="submit" name= "Entrar" value="Entrar">

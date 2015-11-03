@@ -126,13 +126,15 @@ input[type="password"],input[type="text"]{
   font-family: "Open Sans", sans-serif;
   font-size: 95%;
   color: #555;
+  margin-left: 0;
 }
 
 input[type="submit"] {
-  width: 100%;
+  width: 30%;
+  margin-left: 5%;;
   background: #D5BA75;
   border: 0;
-  padding: 4%;
+  padding: 2%;
   font-family: "Open Sans", sans-serif;
   font-size: 100%;
   color: #fff;
