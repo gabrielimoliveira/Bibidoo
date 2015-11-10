@@ -1,7 +1,7 @@
 <?php
 require './conexao.php';
-require 'Livro.class.php';
-					if(!empty($_POST['Enviar'])&&(!empty($_POST['titulo'])) && (!empty($_POST['numpage']))  && (!empty($_POST['sinopse']))&& (!empty($_POST['categoria']))){
+require 'class/Livro.class.php';
+					if(!empty($_POST['cadastroLivro'])&&(!empty($_POST['titulo'])) && (!empty($_POST['numpage']))  && (!empty($_POST['sinopse']))&& (!empty($_POST['categoria']))){
 						$titulo= $_POST['titulo'];
 						$numpage = $_POST['numpage'];
 						$sinopse = $_POST['sinopse'];
@@ -14,7 +14,6 @@ require 'Livro.class.php';
 
 					$Livro = new Livro();
 					//$Livro ->select_categoria($mysqli);
-					$Livro ->mostraformulario($Livro,$mysqli);
 
 
 

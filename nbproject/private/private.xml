@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/projetophp/model/InserirLivro.php</file>
+            <file>file:/C:/xampp/htdocs/projetophp/adm/js/livro.js</file>
             <file>file:/C:/xampp/htdocs/projetophp/menulogin.html</file>
-            <file>file:/C:/xampp/htdocs/projetophp/explorar.php</file>
-            <file>file:/C:/xampp/htdocs/projetophp/entrar.php</file>
+            <file>file:/C:/xampp/htdocs/projetophp/adm/menuadm.html</file>
+            <file>file:/C:/xampp/htdocs/projetophp/adm/entrar.php</file>
+            <file>file:/C:/xampp/htdocs/projetophp/css/business-casual.css</file>
+            <file>file:/C:/xampp/htdocs/projetophp/adm/cadastra_livro.php</file>
+            <file>file:/C:/xampp/htdocs/projetophp/menu.php</file>
+            <file>file:/C:/xampp/htdocs/projetophp/css/bootstrap.css</file>
         </group>
     </open-files>
 </project-private>

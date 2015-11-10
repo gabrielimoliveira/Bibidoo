@@ -3,7 +3,7 @@ $("#busca").submit(function(e){
                 $.ajax({
                     type:"POST",
                     async: true,
-                    url: "./model/busca.php",
+                    url: "busca.php",
                     data:$("#busca").serialize(),
                     success: function(data) {
                             $("#lista_usuario").html(data);

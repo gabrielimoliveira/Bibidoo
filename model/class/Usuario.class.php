@@ -6,14 +6,15 @@ require_once ('Pessoa.class.php');
  		private $senha;
  		private $foto;
  		private $amigos;
-
- 		function __construct($_id=null,$_nome=null,$_nomeusuario=null,$_login=null,$_senha=null,$_nascimento=null,$_foto=null){
+                private $tipo;
+ 		function __construct($_id=null,$_nome=null,$_nomeusuario=null,$_login=null,$_senha=null,$_nascimento=null,$_tipo=null,$_foto=null){
  			parent::__construct($_nome,$_nomeusuario,$_nascimento);
  			$this->foto=$_foto;
  			$this->login=$_login;
  			$this->senha=$_senha;
  			$this->foto=$_foto;
  			$this->id=$_id;
+                        $this->tipo=$_tipo;
  		}
  		function getId(){
  			return $this->id;
@@ -40,11 +41,17 @@ require_once ('Pessoa.class.php');
  		function getfoto(){
  			return $this->foto;
  		}
+                function getTipo(){
+ 			return $this->tipo;
+ 		}
+                function setTipo($_tipo){
+ 			 $this->tipo=$_tipo;
+ 		}
  		function setFoto($_foto){
  			 $this->foto=$_foto;
  		}
  		function InserirUsuario($mysqli){
- 			$query= "insert into Usuario Values" . "(NULL,'$this->nome','$this->login','$this->senha','2','$this->foto','$this->nascimento','$this->nomeusuario')";
+ 			$query= "insert into Usuario Values" . "(NULL,'$this->nome','$this->login','$this->senha','$this->tipo','$this->foto','$this->nascimento','$this->nomeusuario')";
                         $mysqli->query($query);
 		if($mysqli->affected_rows==1){
 			$b="usuario cadastrado com sucesso";
@@ -122,10 +129,19 @@ require_once ('Pessoa.class.php');
 
 	}
         public function VerificaUsuario($mysqli) {
-            $sql= "Select * from usuario where senha='$this->senha' and nomeusuario='$this->login' or email='$this->login'";
-            $resultado= $mysqli->query($sql);
+            $sql= "Select * from usuario where senha='$this->senha' and tipo='$this->tipo' and nomeusuario='$this->login' or email='$this->login'";
+            $resultado= $mysqli->query($sql) or die($mysqli->error);
             $linha=$resultado->fetch_array();
-                 
+            if($mysqli->affected_rows>=1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function VerificaAdm($mysqli) {
+            $sql= "Select * from usuario where senha='$this->senha' and tipo='$this->tipo' and nomeusuario='$this->login' or email='$this->login' ";
+            $resultado= $mysqli->query($sql) or die($mysqli->error);
+            $linha=$resultado->fetch_array();
             if($mysqli->affected_rows>=1){
                 return true;
             }else{

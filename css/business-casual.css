@@ -118,11 +118,11 @@ form {
 
 input[type="email"],
 input[type="password"],input[type="text"]{
-  width: 92%;
+  width: 50%;
   background: #fff;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
   border: 1px solid #ccc;
-  padding: 4%;
+  padding: 1%;
   font-family: "Open Sans", sans-serif;
   font-size: 95%;
   color: #555;
@@ -130,7 +130,7 @@ input[type="password"],input[type="text"]{
 }
 
 input[type="submit"] {
-  width: 30%;
+  width: 20%;
   margin-left: 5%;;
   background: #D5BA75;
   border: 0;
@@ -393,4 +393,17 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+.livro input[type="email"],
+.livro input[type="password"],. livro input[type="text"]{
+    width: 92%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 2%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #555;
+  margin-left: 0;
 }

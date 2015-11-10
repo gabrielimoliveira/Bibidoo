@@ -55,7 +55,8 @@ require '../conexao.php';
                 $foto= "";
                 $nome_imagem= "null";
             }
-     					$usuario = new Usuario(null,$nome,$nomeusuario,$email,$senha,$nascimento,$nome_imagem);
+            $_tipo="2";
+     					$usuario = new Usuario(null,$nome,$nomeusuario,$email,$senha,$nascimento,$_tipo,$nome_imagem);
 						$valor= $usuario ->InserirUsuario($mysqli);
                                                echo $valor;
 ?>
