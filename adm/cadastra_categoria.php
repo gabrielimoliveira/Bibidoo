@@ -68,8 +68,8 @@
        <div class="row">
             <div class="box" id="feed">
                 <div class="col-lg-12">
-                    <form action="" name="cadastra" id="cadastrar" method="POST">
-                        <input type="text" title="Preencha o campo nome categoria" required name="nome" placeholder="Nome Categoria"/>
+                    <form action="InserirCategoria.php" name="cadastra"  method="POST">
+                        <input type="text" title="Preencha o campo nome categoria" required name="categoria" placeholder="Nome Categoria"/>
                         <input type="submit" name="cadastrar" value="Cadastrar" id="btcadastrar"/>
                     </form>
                 </div>

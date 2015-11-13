@@ -1,4 +1,7 @@
-
+<?php
+require '../conexao.php';
+include_once '../model/class/Livro.class.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +15,16 @@
 
     <title>Contact - Business Casual - Start Bootstrap Theme</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="../css/business-casual.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../css/business-casual.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery-2.1.4.js" charset="utf-8"></script>
     <script type="text/javascript" src="../js/jquery-2.1.4.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../js/entrar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/cadastro.js" charset="utf-8"></script>
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -48,6 +53,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                      <?php include('menuadm.html');?>
                     </div>
         <!-- /.container -->
     </nav>
@@ -59,17 +65,16 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">Cadastro
-                        <strong>Cadastro</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-md-8 ">
-<form action="" method="post" class="livro" enctype="multipart/form-data">
+<form method="post" class="livro" enctype="multipart/form-data">
    <input type="text" title="titulo." required name="titulo" id="titulo" placeholder="Titulo" ></br>
    <input type="text" title="número de páginas." required name="numpage" id="numpage" placeholder="numpage"/></br>
    <input type="text" title="leitores." required name="leitores" id="leitores" placeholder="leitors"/></br>
     <input type="text" title="sinopse." required name="sinopse" id="datanascimento" placeholder="sinopse"/></br>
-    <input type="text" title="categoria." required name="categoria" id="datanascimento" placeholder="categoria"/></br>
+   <?php $ob= new Livro(); $ob ->select_categoria($mysqli);?>
    Foto:<input type="file" required name="foto" id="foto" placeholder="foto"/><br/><br/>
 <input type="submit" value="CadastrarLivro" name="cadastroLivro" id="botaocadastro" class="cad" />
                                 <div id="entre">

@@ -81,6 +81,16 @@ Class Livro{
 	public function setData($_data){
 		$this->data=$_data;
 	}
+      function InserirCategoria($mysqli){
+      $query="Insert into categoria Values" . "(NULL,'$this->categoria')";
+      $mysqli->query($query);
+      if($mysqli->affected_rows==1){
+          echo "categoria cadastrada com sucesso";
+      }  else {
+           echo "categoria não cadastrada";
+      }
+      
+  }
 	public function ListaLivro($mysqli){
 
 		$query= "Select * from Livro";
@@ -120,26 +130,16 @@ Class Livro{
 		//$this->categoria=$linha['categoria'];
 	}
 	public function select_categoria($mysqli)
- {
+ {  
+            
     $query = "Select * from categoria";
 	$resultado =$mysqli->query($query);
-
-    echo "Categoria:<SELECT name=categoria>";
-    while ($linha = $resultado->fetch_array())
-    {
-       echo "<OPTION VALUE=\"" . $linha['idCategoria'] . "\"> " . $linha['nome'] . "  </OPTION>";
-    }	
+       echo "Categoria:<SELECT name=categoria>";
+        /* @var $resultado type */
+        while($linha = $resultado->fetch_array()){
+           echo "<OPTION VALUE=\"" . $linha['idCategoria'] . "\"> " . $linha['nome'] . "  </OPTION>";
+        }
 	echo "</SELECT><br>";
-  }
-  public function  inseri_categoria($cat,$mysqli){
-      $query="insert into categoria Values" . "(NULL,'$cat')";
-      $mysqli->query($query);
-      if($mysqli->affected_rows==1){
-          return true;
-      }  else {
-          return false;
-      }
-      
   }
   	public function select_categoria_altera($mysqli,$Livro)
  {

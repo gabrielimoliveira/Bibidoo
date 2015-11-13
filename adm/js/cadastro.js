@@ -1,7 +1,8 @@
 $(function() {
-            $("#btcadastrar").submit(function(b){
+            $("#botaocadastro").submit(function(b){
                 b.preventDefault();
                 alert("emtrou no js");
+                
                 /*$.ajax({
                     type:"POST",
                     async: true,
