@@ -30,26 +30,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        $(function() {
-        $("#formulario").submit(function(e){
-            e.preventDefault();
-            $.ajax({
-                type:"POST",
-                async: true,
-                url: "model/InserirUsuario.php",
-                data:$("#formulario").serialize(),
-                success: function(data) {
-                    $(":text, :email, :password, :date, :file").each(function () {
-                        $(this).val("");
-                    });
-                    $("#saida").html(data);
-                   
-                }
-            });
-	});
-    });
-    </script>
 </head>
 
 <body>

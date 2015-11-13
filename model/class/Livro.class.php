@@ -131,6 +131,16 @@ Class Livro{
     }	
 	echo "</SELECT><br>";
   }
+  public function  inseri_categoria($cat,$mysqli){
+      $query="insert into categoria Values" . "(NULL,'$cat')";
+      $mysqli->query($query);
+      if($mysqli->affected_rows==1){
+          return true;
+      }  else {
+          return false;
+      }
+      
+  }
   	public function select_categoria_altera($mysqli,$Livro)
  {
     $query = "Select * from categoria";
