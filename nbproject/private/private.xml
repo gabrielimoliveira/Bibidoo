@@ -5,14 +5,10 @@
         <group>
             <file>file:/C:/xampp/htdocs/projetophp/model/class/Livro.class.php</file>
             <file>file:/C:/xampp/htdocs/projetophp/model/InserirLivro.php</file>
-            <file>file:/C:/xampp/htdocs/projetophp/adm/js/livro.js</file>
-            <file>file:/C:/xampp/htdocs/projetophp/menulogin.html</file>
-            <file>file:/C:/xampp/htdocs/projetophp/adm/menuadm.html</file>
-            <file>file:/C:/xampp/htdocs/projetophp/adm/entrar.php</file>
-            <file>file:/C:/xampp/htdocs/projetophp/css/business-casual.css</file>
+            <file>file:/C:/xampp/htdocs/projetophp/adm/js/cadastro.js</file>
+            <file>file:/C:/xampp/htdocs/projetophp/js/entrar.js</file>
             <file>file:/C:/xampp/htdocs/projetophp/adm/cadastra_livro.php</file>
-            <file>file:/C:/xampp/htdocs/projetophp/menu.php</file>
-            <file>file:/C:/xampp/htdocs/projetophp/css/bootstrap.css</file>
+            <file>file:/C:/xampp/htdocs/projetophp/conexao.php</file>
         </group>
     </open-files>
 </project-private>

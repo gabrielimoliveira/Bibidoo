@@ -10,13 +10,16 @@ Class Livro{
 	private $tipo;//da tabela Usuario_has_livro
 	private $data;//da tabela Usuario_has_livro
 	private $idimagem;
-	public function __construct($_id=null,$_titulo=null,$_numpage=null,$_sinopse=null,$_leitores=null,$_categoria=null){
+        private $ano;
+        public function __construct($_id=null,$_titulo=null,$_numpage=null,$_sinopse=null,$_leitores=null,$_categoria=null,$_foto=null,$_ano=null){
 		$this->id=$_id;
 		$this->titulo=$_titulo;
 		$this->numpage=$_numpage;
 		$this->sinopse=$_sinopse;
 		$this->leitores=$_leitores;
 		$this->categoria=$_categoria;
+                $this->foto=$_foto;
+                 $this->ano=$_ano;
 	}
 	public function getTitulo(){
 		return $this->titulo;
@@ -81,7 +84,13 @@ Class Livro{
 	public function setData($_data){
 		$this->data=$_data;
 	}
-      function InserirCategoria($mysqli){
+        public function getAno(){
+            return $this->ano;
+        }
+        public function setAno($_ano){
+            $this->ano=$_ano;
+        }
+                function InserirCategoria($mysqli){
       $query="Insert into categoria Values" . "(NULL,'$this->categoria')";
       $mysqli->query($query);
       if($mysqli->affected_rows==1){
@@ -158,13 +167,20 @@ Class Livro{
 	echo "</SELECT><br>";
   }
 	public function IncluirLivro($mysqli){
-		$query= "insert into Livro Values" . "(NULL,' $this->titulo ', '$this->numpage ',' $this->sinopse ',' $this->leitores',' $this->categoria ')";
+		$query= "insert into Livro Values" . "(NULL,'$this->titulo',$this->numpage,'$this->sinopse',$this->leitores,'$this->ano')";
 		$mysqli->query($query);
 		if($mysqli->affected_rows==1){
-			echo "Livro cadastrado com sucesso";
+                    $query1 = "SELECT LAST_INSERT_ID() AS 'idLivro'";
+                    $resultado= $mysqli->query($query1);
+                    $linha=$resultado->fetch_array();
+                    $idLivro=$linha['idLivro'];
+                    $sql= "INSERT into livroca Values" . "($idLivro,$this->categoria)";
+                    $mysqli->query($sql);
+			return "Livro cadastrado com sucesso";
 		}else{
-			echo "Erro livro nao cadastrado: $mysqli->error";
+			return "Erro livro nao cadastrado:" .$mysqli->error;
 		}
+                
 	}
 	function mostraformulario($Livro,$mysqli){
 
@@ -231,50 +247,5 @@ Class Livro{
 
 		<?php
 	}
-	public function processafoto($foto,$mysqli){
-		if (!empty($foto["name"])) {
-      $largura = 3000; // Largura máxima em pixels
-      $altura = 4000; // Altura máxima em pixels
-      $tamanho = 150000; // Tamanho máximo do arquivo em bytes
-    // Verifica se o arquivo é uma imagem
-    if(!preg_match("/(jpeg|png|gif|bmp)/", $foto["type"])){
-       $error[] = "Isso não é uma imagem.";
-    } 
-    $dimensoes = getimagesize($foto["tmp_name"]); // Pega as dimensões da imagem
-    // Verifica se a largura da imagem é maior que a largura permitida
-    if($dimensoes[0] > $largura) {
-      $error[] = "A largura da imagem não deve ultrapassar ".$largura." pixels";
-    }
-    // Verifica se a altura da imagem é maior que a altura permitida
-    if($dimensoes[1] > $altura) {
-      $error[] = "Altura da imagem não deve ultrapassar ".$altura." pixels";
-    }
-    // Verifica se o tamanho da imagem é maior que o tamanho permitido
-    if($foto["size"] > $tamanho) {
-      $error[] = "A imagem deve ter no máximo ".$tamanho." bytes";
-    }
-    // Se não houver nenhum erro
-    if (empty($error)) {
-    // Pega extensão da imagem
-      preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
-    // Gera um nome único para a imagem
-      $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-    // Caminho de onde ficará a imagem
-      $caminho_imagem = "foto/" . $nome_imagem;
-    // Faz o upload da imagem para seu respectivo caminho
-    move_uploaded_file($foto["tmp_name"], $caminho_imagem);
-    
-    }
-    $query= "insert into Imagens Values" . "(NULL,' $nome_imagem','$this->id')";
-		$mysqli->query($query);
-    // Se houver mensagens de erro, exibe-as
-    if (!empty($error)){
-      foreach ($error as $erro){
-       echo $erro . "<br/>";
-      }
-    }
-    }    
-    
-}
 }
 ?>

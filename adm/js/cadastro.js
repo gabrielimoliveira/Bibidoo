@@ -1,16 +1,24 @@
 $(function() {
-            $("#botaocadastro").submit(function(b){
+            $("#livro").submit(function(b){
                 b.preventDefault();
-                alert("emtrou no js");
+                $(':file').change(function(){
+                    var file = this.files[0];
+                    var name = file.name;
+                    var size = file.size;
+                       var type = file.type;
+    //Your validation
+});
+                var tal=
                 
-                /*$.ajax({
+                $.ajax({
                     type:"POST",
                     async: true,
-                    url: "../model/InserirCategoria.php",
-                    data:$("#cadastrar").serialize(),
-                    success: function(data) {
+                    url: "../model/InserirLivro.php",
+                    data:$("#livro").serialize(),
+                    success: function(data){
+                        alert(data);
                     }
-                });*/
+                });
             });
         });
             

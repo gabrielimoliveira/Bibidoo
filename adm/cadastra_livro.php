@@ -69,14 +69,15 @@ include_once '../model/class/Livro.class.php';
                     <hr>
                 </div>
                 <div class="col-md-8 ">
-<form method="post" class="livro" enctype="multipart/form-data">
+<form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="livro" class="livro" >
    <input type="text" title="titulo." required name="titulo" id="titulo" placeholder="Titulo" ></br>
    <input type="text" title="número de páginas." required name="numpage" id="numpage" placeholder="numpage"/></br>
    <input type="text" title="leitores." required name="leitores" id="leitores" placeholder="leitors"/></br>
+   <input type="text" title="ano" required name="ano" id="leitores" placeholder="ano"/></br>
     <input type="text" title="sinopse." required name="sinopse" id="datanascimento" placeholder="sinopse"/></br>
-   <?php $ob= new Livro(); $ob ->select_categoria($mysqli);?>
-   Foto:<input type="file" required name="foto" id="foto" placeholder="foto"/><br/><br/>
-<input type="submit" value="CadastrarLivro" name="cadastroLivro" id="botaocadastro" class="cad" />
+   <?php $ob= new Livro(); $ob ->select_categoria($mysqli);?><br/>
+   <input type="file" name="LIVRO" id="foto"/><br /><br />
+<input type="submit" value="CadastrarLivro" name="CadastroLivro" id="botaocadastro" class="cad" />
                                 <div id="entre">
                                     </div>
                         </form>

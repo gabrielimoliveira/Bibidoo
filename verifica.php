@@ -12,7 +12,7 @@ if(!empty($_POST['login']) && !empty($_POST['pswd'])){
         $usuario->setTipo("2");
         if($usuario->VerificaUsuario($mysqli)){
             $_SESSION['usuario']=$usuario->getNomeUsuario();
-            echo"usuario";
+            header('location: entrar.php');
         }else{
             $usuario->setLogin($login);
             $usuario->setSenha($senha);
